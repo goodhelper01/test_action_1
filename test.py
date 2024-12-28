@@ -1,5 +1,5 @@
 import sys
 print("hello world")
-sys.exit(12)
+sys.exit(0)
 print("hi")
 print("good")
