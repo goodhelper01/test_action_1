@@ -13,10 +13,10 @@ for i in receiver:
     msg["To"]=i
     msg["Subjet"]=Header("Test send email","utf-8").encode()
     
-    #body="This is send by python\n"
-    #body2="how are you?"
+    body="This is send by python\n"
+    body2="how are you?"
 
-    msg_text=MIMEText("This is send by python")
+    msg_text=MIMEText(body+body2)
     msg.attach(msg_text)
     c=ssl.create_default_context()
 
