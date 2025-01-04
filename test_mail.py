@@ -21,13 +21,13 @@ for i in receiver:
     msg_text=MIMEText(body+body2)
     msg.attach(msg_text)
 
-    text_path = "test.txt"    
-    
+    text_path = "new/test.txt"    
+
     with open(text_path,"r") as f:
         part = MIMEBase("application","octet-stream")
         part.set_payload(f.read())
         encoders.encode_base64(part)
-        part.add_header('Content-Disposition','attachment; filename="test.txt"')
+        part.add_header('Content-Disposition','attachment; filename="'+text_path+'"')
         msg.attach(part)
     
     c=ssl.create_default_context()
